@@ -1,0 +1,44 @@
+body {
+    background-color: aquamarine;
+}
+.header {
+    background-color: #f04c4c;
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    border-top: 30px;    
+}
+.logo {
+    width: 25%;
+height: auto;
+aspect-ratio: 2/ 2; /* Mantiene un cuadrado perfecto */
+object-fit: cover;
+
+}
+.contenedor_productos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+    height: 25%;
+margin-bottom: 1%;
+}
+.foto-gato {
+margin: 50px;
+aspect-ratio: 5/ 5; /* Mantiene un cuadrado perfecto */
+object-fit: cover;
+}
+.items{
+    margin: 50px;
+margin-bottom: 3px;
+}
+.item{
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
