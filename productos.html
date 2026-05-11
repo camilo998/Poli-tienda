@@ -1,130 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="productos.css">
-    <title>Productos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos</title>
+  <link rel="stylesheet" href="productos.css">
 </head>
 <body>
-    <header >
-        
-        <nav class="header">
-            <ul class="header">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhdZ7otWyIFAqBIoiqyrbRJNRRL0_m44F36g&s" alt="" class="logo">
-                <li ><a href="index.html">Inicio</a></li>
-                <li ><a href="productos.html">Productos</a></li>
-                <li ><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-        
-    </header>
+  <header>
+    <nav class="header">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhdZ7otWyIFAqBIoiqyrbRJNRRL0_m44F36g&s" alt="logo" class="logo">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="productos.html">Productos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </nav>
+  </header>
 
-    <h1>Productos</h1>
-<!-- primeros productos -->
-<div class="contenedor_productos">
-    
+  <h1>Productos</h1>
+
+  <!-- Productos -->
+  <div class="contenedor_productos">
     <div class="items">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP9kjGoUyCullSB0hdGnAsNA_B3191jwv_DA&s" alt="foto-gato" class="foto-gato">
-        <h2>descripcion</h2>
-        <p>texto</p>
-        <button>comprar</button>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP9kjGoUyCullSB0hdGnAsNA_B3191jwv_DA&s" alt="foto-gato" class="foto-gato">
+      <h2>gato negrito sorprendido</h2>
+      <button>descripcion</button>  
+      <button>AÑADEME AL CARRO ANIMALLLLLLLLLLL</button>
+    </div>
+<!-- Productos2 -->
+    <div class="items">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6-A50gwQdbkC0eYpfvInN7F1H7jo4CixfGw&s" alt="foto-gato" class="foto-gato">
+      <h2>gato blanco con manchas</h2>
+      <button>descripcion</button>
+      <button>AÑADEME AL CARRO ANIMALLLLLLLLLLL</button>
     </div>
 
+<!-- Productos3 -->
     <div class="items">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6-A50gwQdbkC0eYpfvInN7F1H7jo4CixfGw&s" alt="foto-gato" class="foto-gato">
-        <h2>descripcion</h2>
-        <p>texto</p>
-        <button>comprar</button>
+      <img src="https://i.pinimg.com/236x/94/39/7c/94397c2c4e0489b53b67e2f014449935.jpg" alt="foto-gato" class="foto-gato">
+      <h2>mira morti me converti en un pepinillo</h2>
+      <button>descripcion</button>
+      <button>AÑADEME AL CARRO ANIMALLLLLLLLLLL</button>
     </div>
-    
-    <div class="items">
-        <img src="https://i.pinimg.com/236x/94/39/7c/94397c2c4e0489b53b67e2f014449935.jpg"alt="foto-gato" class="foto-gato">
-        <h2>descripcion</h2>
-        <p>texto</p>
-        <button>comprar</button>
-    </div>
-
-</div>
-
-<!-- segundos productos -->
-<div class="contenedor_productos">
-    
-    <div class="items">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP9kjGoUyCullSB0hdGnAsNA_B3191jwv_DA&s" alt="foto-gato" class="foto-gato">
-        <h2>descripcion</h2>
-        <p>texto</p>
-        <button>comprar</button>
-    </div>
-
-    <div class="items">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6-A50gwQdbkC0eYpfvInN7F1H7jo4CixfGw&s" alt="foto-gato" class="foto-gato">
-        <h2>descripcion</h2>
-        <p>texto</p>
-        <button>comprar</button>
     </div>
     
-    <div class="items">
-        <img src="https://i.pinimg.com/236x/94/39/7c/94397c2c4e0489b53b67e2f014449935.jpg"alt="foto-gato" class="foto-gato">
-        <h2>descripcion</h2>
-        <p>texto</p>
-        <button>comprar</button>
-    </div>
+  <!-- Botón carrito -->
+  <div class="carro-container">
+    <button class="carro" onclick="mostrarCuadrado()">🛒</button>
+  </div>
 
-</div>
-<!-- terceros productos -->
-    
-    
-    <div class="item">
-            <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP9kjGoUyCullSB0hdGnAsNA_B3191jwv_DA&s" alt="foto-gato" >
-                <h2>descripcion</h2>
-                <p>texto</p>
-                <button>comprar</button>
-            </div>
-    
+  <!-- Cuadro del carrito -->
+  <div id="miCuadrado">
+    <button class="cerrar" onclick="cerrarCuadrado()">❌</button>
+    <h1>Aquí se mostrarán los productos futuramente</h1>
+  </div>
 
-        <div class="item">
-            <div>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6-A50gwQdbkC0eYpfvInN7F1H7jo4CixfGw&s" alt="foto-gato" >
-            <h2>descripcion</h2>
-            <p>texto</p>
-            <button>comprar</button>
-        </div>
-        
-        <div class="item">
-            <div><img src="https://i.pinimg.com/236x/94/39/7c/94397c2c4e0489b53b67e2f014449935.jpg"alt="foto-gato" >
-                <h2>descripcion</h2>
-                <p>texto</p>
-                <button>comprar</button>
-            </div>
+  <script>
+    function mostrarCuadrado() {
+      var x = document.getElementById("miCuadrado");
+      x.style.display = "flex";
+    }
 
-    </div>
+    function cerrarCuadrado() {
+      var x = document.getElementById("miCuadrado");
+      x.style.display = "none";
+    }
 
-    <!-- hi productos -->
-    <div class="contenedor_productos">
-    
-    <div class="items">
-        <img src="https://i.blogs.es/671f64/kitler/450_1000.jpg" alt="foto-gato" class="foto-gato">
-        <h2>descripcion</h2>
-        <p>texto</p>
-        <button>comprar</button>
-    </div>
-
-    <div class="items">
-        <img src="https://i.blogs.es/671f64/kitler/450_1000.jpg" alt="foto-gato" class="foto-gato">
-        <h2>descripcion</h2>
-        <p>texto</p>
-        <button>comprar</button>
-    </div>
-    
-    <div class="items">
-        <img src="https://i.blogs.es/671f64/kitler/450_1000.jpg"alt="foto-gato" class="foto-gato">
-        <h2>descripcion</h2>
-        <p>texto</p>
-        <button>comprar</button>
-    </div>
-
-    </div>
-
+    function toggleDropdown() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+  </script>
 </body>
 </html>
