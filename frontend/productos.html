@@ -1,89 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poli tienda</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos</title>
+  <link rel="stylesheet" href="productos.css">
 </head>
 <body>
-    <header>
-        <div id="logo">
-            <img src="assets/logo-politienda.png" alt="">
-        </div>
-        <div id="cuenta">
-            <img src="assets/cuenta.svg" alt="">
-        </div>
-    </header>
-    <main class="main">
-        <div class="container">
-            <!-- productos -->
-         <div class="publicacion">
-            <img class="img-pub" src="assets/publicacion.png" alt="">
-            <div class="bottones">
-                <button>detalle</button>
-            <button>agregar a 🛒</button>
-            </div>
-         </div>
-         <div class="publicacion">
-            <img class="img-pub" src="assets/publicacion.png" alt="">
-            <div class="bottones">
-                <button>detalle</button>
-            <button>agregar a 🛒</button>
-            </div>
-         </div>
-         <div class="publicacion">
-            <img class="img-pub" src="assets/publicacion.png" alt="">
-            <div class="bottones">
-            <button>detalle</button>
-            <button>agregar a 🛒</button>
-            </div>
-         </div>
-         <div class="publicacion">
-            <img class="img-pub" src="assets/publicacion.png" alt="">
-            <div class="bottones">
-                <button>detalle</button>
-            <button>agregar a 🛒</button>
-            </div>
-         </div>
-          <div class="publicacion">
-            <img class="img-pub" src="assets/publicacion.png" alt="">
-            <div class="bottones">
-                <button>detalle</button>
-            <button>agregar a 🛒</button>
-            </div>
-         </div>
-          <div class="publicacion">
-            <img class="img-pub" src="assets/publicacion.png" alt="">
-            <div class="bottones">
-                <button>detalle</button>
-            <button>agregar a 🛒</button>
-            </div>
-         </div> <div class="publicacion">
-            <img class="img-pub" src="assets/publicacion.png" alt="">
-            <div class="bottones">
-                <button>detalle</button>
-            <button>agregar a 🛒</button>
-            </div>
-         </div> <div class="publicacion">
-            <img class="img-pub" src="assets/publicacion.png" alt="">
-            <div class="bottones">
-                <button>detalle</button>
-            <button>agregar a 🛒</button>
-            </div>
-         </div>
-        </div>
-   
+  <header>
+    <nav class="header">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhdZ7otWyIFAqBIoiqyrbRJNRRL0_m44F36g&s" alt="logo" class="logo">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="productos.html">Productos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </nav>
+  </header>
 
-    </main>
-     <div class="btn-carrito">
-        <img src="assets/carro.svg" alt="">
+  <h1>Productos</h1>
+
+  <!-- Productos -->
+  <div class="contenedor_productos">
+    <div class="items">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP9kjGoUyCullSB0hdGnAsNA_B3191jwv_DA&s" alt="foto-gato" class="foto-gato">
+      <h2>gato negrito sorprendido</h2>
+      <button>descripcion</button>  
+      <button>AÑADEME AL CARRO ANIMALLLLLLLLLLL</button>
     </div>
-    <footer>
-        <!-- pie de pagina -->
-    </footer>
+<!-- Productos2 -->
+    <div class="items">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6-A50gwQdbkC0eYpfvInN7F1H7jo4CixfGw&s" alt="foto-gato" class="foto-gato">
+      <h2>gato blanco con manchas</h2>
+      <button>descripcion</button>
+      <button>AÑADEME AL CARRO ANIMALLLLLLLLLLL</button>
+    </div>
 
-
+<!-- Productos3 -->
+    <div class="items">
+      <img src="https://i.pinimg.com/236x/94/39/7c/94397c2c4e0489b53b67e2f014449935.jpg" alt="foto-gato" class="foto-gato">
+      <h2>mira morti me converti en un pepinillo</h2>
+      <button>descripcion</button>
+      <button>AÑADEME AL CARRO ANIMALLLLLLLLLLL</button>
+    </div>
+    </div>
     
+  <!-- Botón carrito -->
+  <div class="carro-container">
+    <button class="carro" onclick="mostrarCuadrado()">🛒</button>
+  </div>
+
+  <!-- Cuadro del carrito -->
+  <div id="miCuadrado">
+    <button class="cerrar" onclick="cerrarCuadrado()">❌</button>
+    <h1>Aquí se mostrarán los productos futuramente</h1>
+  </div>
+
+  <script>
+    function mostrarCuadrado() {
+      var x = document.getElementById("miCuadrado");
+      x.style.display = "flex";
+    }
+
+    function cerrarCuadrado() {
+      var x = document.getElementById("miCuadrado");
+      x.style.display = "none";
+    }
+
+    function toggleDropdown() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+  </script>
 </body>
 </html>
