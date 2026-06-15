@@ -18,30 +18,10 @@
 
   <h1>Productos</h1>
 
-  <!-- Productos -->
-  <div class="contenedor_productos">
-    <div class="items">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP9kjGoUyCullSB0hdGnAsNA_B3191jwv_DA&s" alt="foto-gato" class="foto-gato">
-      <h2>gato negrito sorprendido</h2>
-      <button>descripcion</button>  
-      <button>AÑADEME AL CARRO ANIMALLLLLLLLLLL</button>
-    </div>
-<!-- Productos2 -->
-    <div class="items">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6-A50gwQdbkC0eYpfvInN7F1H7jo4CixfGw&s" alt="foto-gato" class="foto-gato">
-      <h2>gato blanco con manchas</h2>
-      <button>descripcion</button>
-      <button>AÑADEME AL CARRO ANIMALLLLLLLLLLL</button>
-    </div>
-
-<!-- Productos3 -->
-    <div class="items">
-      <img src="https://i.pinimg.com/236x/94/39/7c/94397c2c4e0489b53b67e2f014449935.jpg" alt="foto-gato" class="foto-gato">
-      <h2>mira morti me converti en un pepinillo</h2>
-      <button>descripcion</button>
-      <button>AÑADEME AL CARRO ANIMALLLLLLLLLLL</button>
-    </div>
-    </div>
+  <!-- Productos dinámicos -->
+  <div class="contenedor_productos" id="contenedor_productos">
+    <!-- Se llenará con fetch -->
+  </div>
     
   <!-- Botón carrito -->
   <div class="carro-container">
@@ -55,6 +35,41 @@
   </div>
 
   <script>
+    async function cargarProductos() {
+      try {
+        const res = await fetch('/api/productos');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        const productos = data.data || [];
+
+        const contenedor = document.getElementById('contenedor_productos');
+        contenedor.innerHTML = '';
+
+        if (productos.length === 0) {
+          contenedor.innerHTML = '<p>No hay productos disponibles.</p>';
+          return;
+        }
+
+        productos.forEach((p) => {
+          const div = document.createElement('div');
+          div.className = 'items';
+          div.innerHTML = `
+            <img src="${p.ImagenUrl || 'https://via.placeholder.com/200'}" alt="foto-gato" class="foto-gato">
+            <h2>${p.Nombre}</h2>
+            <p>Precio: $${p.Precio}</p>
+            <p>${p.Descripcion || ''}</p>
+            <button>Ver detalles</button>
+            <button>AÑADEME AL CARRO</button>
+          `;
+          contenedor.appendChild(div);
+        });
+      } catch (err) {
+        console.error('Error al cargar productos:', err);
+        const contenedor = document.getElementById('contenedor_productos');
+        contenedor.innerHTML = '<p style="color:red">Error al cargar productos.</p>';
+      }
+    }
+
     function mostrarCuadrado() {
       var x = document.getElementById("miCuadrado");
       x.style.display = "flex";
@@ -65,9 +80,8 @@
       x.style.display = "none";
     }
 
-    function toggleDropdown() {
-      document.getElementById("myDropdown").classList.toggle("show");
-    }
+    window.addEventListener('DOMContentLoaded', cargarProductos);
   </script>
 </body>
 </html>
+
