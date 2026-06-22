@@ -1,9 +1,4 @@
--- ============================================
--- SCRIPT DE CONFIGURACIÓN DE BASE DE DATOS
--- Tienda de Gato - SQL Server
--- ============================================
 
--- Verificar si la BD existe y eliminarla
 IF EXISTS (SELECT * FROM sys.databases WHERE name = 'tienda_gatos')
 BEGIN
     ALTER DATABASE tienda_gato SET SINGLE_USER WITH ROLLBACK IMMEDIATE;

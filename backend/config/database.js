@@ -2,13 +2,13 @@ const sqlserver = require('mssql');
 
 // Conexión a SQL Server usando autenticación de Windows
 const config = {
-    server: 'DESKTOPCHL70Q',
+    server: 'localhost',
+    user: 'qwerty',
+    password: '1234q',
     database: 'tienda_gato',
     options: {
         encrypt: false,
-        trustServerCertificate: true,
-        trustedConnection: true,
-        instancename: 'SQLEXPRESS'
+        trustServerCertificate: true
     }
 };
 
