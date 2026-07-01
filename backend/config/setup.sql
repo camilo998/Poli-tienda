@@ -40,7 +40,14 @@ CREATE TABLE VETERINARIOS (
     telefono VARCHAR(20)
 );
 GO
-
+CREATE TABLE CONTACTOS (
+    id_contacto INT IDENTITY(1,1) PRIMARY KEY,
+    nombre VARCHAR(150) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    mensaje VARCHAR(MAX) NOT NULL,
+    fecha DATETIME DEFAULT GETDATE()
+);
+GO
 -- ============================================
 -- TABLAS CON DEPENDENCIAS DE PRIMER NIVEL
 -- ============================================
@@ -163,6 +170,12 @@ INSERT INTO PRODUCTOS_ACCESORIOS (id_categoria, nombre_producto, descripcion, pr
 (1, 'Gato pepinillo divertido', 'Imagen graciosa estilo meme de un gato convertido en pepinillo', 8.00, 5, 'Gato', 'https://i.pinimg.com/236x/94/39/7c/94397c2c4e0489b53b67e2f014449935.jpg'),
 (2, 'Collar reflejante para gatos', 'Collar ajustable reflejante para gatos', 15.00, 10, 'Gato', 'https://i.pinimg.com/236x/7d/3a/2f/7d3a2f4f6c2a4a9b7f6c9a9f6a7a9a9f.jpg'),
 (2, 'qwerty12', 'Producto de prueba qwerty12 agregado al catálogo', 9.99, 10, 'Gato', 'https://via.placeholder.com/150');
+GO
+
+-- Ejemplos de contactos guardados
+INSERT INTO CONTACTOS (nombre, email, mensaje) VALUES
+('Ejemplo Uno', 'ejemplo1@correo.com', 'Hola, quisiera saber si tienen envíos a domicilio y qué tiempo tardan.'),
+('Ejemplo Dos', 'ejemplo2@correo.com', 'Estoy interesado en el producto qwerty12, ¿pueden confirmarme su disponibilidad?');
 GO
 
 PRINT '✓ Base de datos creada y configurada correctamente';

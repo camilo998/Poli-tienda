@@ -1,0 +1,157 @@
+body {
+  background-color: aquamarine;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background-color: #f04c4c;
+  display: flex;
+  list-style: none;
+  gap: 5px;
+  padding: 5px;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+}
+
+.header li {
+  display: inline;
+}
+
+
+
+.header a:hover,
+.header a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.contacto-contenedor {
+  max-width: 980px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.contacto-intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contacto-intro h1 {
+  margin-bottom: 12px;
+  font-size: 2.6rem;
+}
+
+.contacto-intro p {
+  max-width: 640px;
+  margin: 0 auto;
+  color: #333;
+  line-height: 1.6;
+}
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.contacto-info {
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+}
+
+.contacto-info h2 {
+  margin-top: 0;
+  color: #f04c4c;
+}
+
+.contacto-info ul {
+  padding-left: 18px;
+  margin-top: 16px;
+}
+
+.contacto-info li {
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+.contacto-form {
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contacto-form label {
+  font-weight: bold;
+  color: #333;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.contacto-form textarea {
+  resize: vertical;
+}
+
+.contacto-form button {
+  border: none;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  background-color: #f04c4c;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.contacto-form button:hover {
+  background-color: #d43c3c;
+}
+
+.contacto-mensaje {
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.contacto-mensaje.success {
+  color: #1e6723;
+}
+
+.contacto-mensaje.error {
+  color: #8b0000;
+}
+
+.contacto-ejemplos {
+  margin-top: 30px;
+  display: grid;
+  gap: 16px;
+}
+
+.ejemplo-card {
+  background: #f8f8f8;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 18px;
+  line-height: 1.7;
+}
+
+@media (max-width: 860px) {
+  .contacto-grid {
+    grid-template-columns: 1fr;
+  }
+}

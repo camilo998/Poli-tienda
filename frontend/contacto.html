@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <link rel="stylesheet" href="contacto.css">
+</head>
+<body>
+  <header>
+    <nav class="header">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhdZ7otWyIFAqBIoiqyrbRJNRRL0_m44F36g&s" alt="logo" class="logo">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="productos.html">Productos</a></li>
+      <li><a href="contacto.html" >Contacto</a></li>
+    </nav>
+  </header>
+
+  <main class="contacto-contenedor">
+    <section class="contacto-intro">
+      <h1>Contacto</h1>
+      <p>¿Tienes dudas? Escríbenos y te responderemos lo antes posible.</p>
+    </section>
+
+    <section class="contacto-grid">
+      <div class="contacto-info">
+        <h2>Información</h2>
+        <p>Estamos aquí para ayudarte con tu tienda de productos para gatos.</p>
+        <ul>
+          <li><strong>Email:</strong> contacto@tiendagato.com</li>
+          <li><strong>Teléfono:</strong> +57 300 000 0000</li>
+          <li><strong>Dirección:</strong> Calle de los Gatos 123, Bogotá</li>
+        </ul>
+      </div>
+
+      <form id="contactoForm" class="contacto-form">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+        <button type="submit">Enviar mensaje</button>
+        <p id="contactoMensaje" class="contacto-mensaje"></p>
+      </form>
+
+      
+    </section>
+  </main>
+
+  <script>
+    const formulario = document.getElementById('contactoForm');
+    const mensaje = document.getElementById('contactoMensaje');
+
+    formulario.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      mensaje.textContent = '';
+
+      const datos = {
+        nombre: document.getElementById('nombre').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        mensaje: document.getElementById('mensaje').value.trim()
+      };
+
+      try {
+        const respuesta = await fetch('/api/contacto', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(datos)
+        });
+
+        const resultado = await respuesta.json();
+
+        if (!respuesta.ok) {
+          mensaje.textContent = resultado.error || 'Error al enviar el mensaje';
+          mensaje.className = 'contacto-mensaje error';
+          return;
+        }
+
+        mensaje.textContent = 'Mensaje enviado correctamente. Gracias por contactarnos.';
+        mensaje.className = 'contacto-mensaje success';
+        formulario.reset();
+      } catch (err) {
+        mensaje.textContent = 'No se pudo enviar el mensaje. Intenta de nuevo.';
+        mensaje.className = 'contacto-mensaje error';
+      }
+    });
+  </script>
+</body>
+</html>
