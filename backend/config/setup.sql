@@ -1,5 +1,5 @@
 
-IF EXISTS (SELECT * FROM sys.databases WHERE name = 'tienda_gatos')
+IF EXISTS (SELECT * FROM sys.databases WHERE name = 'tienda_gato')
 BEGIN
     ALTER DATABASE tienda_gato SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
     DROP DATABASE tienda_gato;
@@ -10,7 +10,7 @@ GO
 CREATE DATABASE tienda_gato;
 GO
 
-USE tienda_gatos;
+USE tienda_gato;
 GO
 
 -- ============================================
@@ -161,7 +161,8 @@ INSERT INTO PRODUCTOS_ACCESORIOS (id_categoria, nombre_producto, descripcion, pr
 (1, 'Gato negrito sorprendido', 'Foto divertida de un gato negro con cara de sorpresa', 10.00, 5, 'Gato', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP9kjGoUyCullSB0hdGnAsNA_B3191jwv_DA&s'),
 (1, 'Gato blanco con manchas', 'Foto tierna de un gato blanco con manchas oscuras', 12.00, 5, 'Gato', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6-A50gwQdbkC0eYpfvInN7F1H7jo4CixfGw&s'),
 (1, 'Gato pepinillo divertido', 'Imagen graciosa estilo meme de un gato convertido en pepinillo', 8.00, 5, 'Gato', 'https://i.pinimg.com/236x/94/39/7c/94397c2c4e0489b53b67e2f014449935.jpg'),
-(2, 'Collar reflejante para gatos', 'Collar ajustable reflejante para gatos', 15.00, 10, 'Gato', 'https://i.pinimg.com/236x/7d/3a/2f/7d3a2f4f6c2a4a9b7f6c9a9f6a7a9a9f.jpg');
+(2, 'Collar reflejante para gatos', 'Collar ajustable reflejante para gatos', 15.00, 10, 'Gato', 'https://i.pinimg.com/236x/7d/3a/2f/7d3a2f4f6c2a4a9b7f6c9a9f6a7a9a9f.jpg'),
+(2, 'qwerty12', 'Producto de prueba qwerty12 agregado al catálogo', 9.99, 10, 'Gato', 'https://via.placeholder.com/150');
 GO
 
 PRINT '✓ Base de datos creada y configurada correctamente';

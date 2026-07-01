@@ -1,11 +1,13 @@
 const sqlserver = require('mssql');
 
-// Conexión a SQL Server usando autenticación de Windows
+// Conexión a SQL Server usando autenticación de SQL Server.
+// Cambia el server a tu instancia activa, por ejemplo 'localhost\\DAVID' o 'localhost\\SQLEXPRESS'.
 const config = {
-    server: 'localhost',
-    user: 'qwerty',
-    password: '1234q',
-    database: 'tienda_gato',
+    server: process.env.DB_SERVER || 'localhost',
+    port: process.env.DB_PORT ? parseInt(process.env.DB_PORT, 10) : 1433,
+    user: process.env.DB_USER || 'qwerty1',
+    password: process.env.DB_PASSWORD || '1234q',
+    database: process.env.DB_NAME || 'tienda_gato',
     options: {
         encrypt: false,
         trustServerCertificate: true
