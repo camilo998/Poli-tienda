@@ -2,19 +2,110 @@ body {
   background-color: aquamarine;
   margin: 0;
   font-family: Arial, sans-serif;
+  overflow-y: scroll;       /* mantiene el scroll */
+  scrollbar-width: none;    /* Firefox */
+}
+
+/* Ocultar scroll en todos los navegadores */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: hidden; /* quita el scroll vertical */
+}
+
+/* Si quieres mantener el scroll pero sin mostrar la barra */
+body {
+  overflow-y: scroll;        /* mantiene el scroll */
+  scrollbar-width: none;     /* Firefox */
+}
+
+body::-webkit-scrollbar {    /* Chrome, Edge, Safari */
+  width: 0px;
+  background: transparent;   /* invisible */
 }
 
 .header {
   background-color: #f04c4c;
   display: flex;
-  list-style: none;
-  gap: 5px;
-  padding: 5px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 36px;
+  gap: 20px;
+
+  position: fixed;   /* lo fija en la pantalla */
+  top: 0;            /* lo coloca arriba */
+  left: 0;           /* alineado a la izquierda */
+  width: 97%;       /* ocupa todo el ancho */
+  z-index: 1000;     /* se asegura de estar por encima del contenido */
 }
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .logo {
-  width: 25px;
-  height: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.7);
 }
+
+.brand-name {
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 999px;
+  transition: background-color 0.2s ease;
+}
+
+
+.nav-list a.active {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+main {
+  background-color: aquamarine;
+  padding: 40px 36px 60px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.hero-text {
+  max-width: 560px;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d43c3c;
+}
+
 
 
 .contenedor_productos {

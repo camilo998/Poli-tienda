@@ -1,20 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>inicio</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio | Tienda Gato</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header>
+  <header>
     <nav class="header">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhdZ7otWyIFAqBIoiqyrbRJNRRL0_m44F36g&s" alt="logo" class="logo">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="productos.html">Productos</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
+      <div class="header-left">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhdZ7otWyIFAqBIoiqyrbRJNRRL0_m44F36g&s" alt="logo" class="logo">
+        <span class="brand-name">Tienda Gato</span>
+      </div>
+      <ul class="nav-list">
+        <li><a href="index.html" class="active">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
     </nav>
   </header>
-    <h1>Bienvenido a nuestra tienda</h1>    
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Todo para tu gato</p>
+        <h1>Productos únicos para mimar a tu mejor amigo</h1>
+        <p>Encuentra accesorios, fotos y regalos especiales pensados para el mundo felino. Compra fácil, rápido y con estilo.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="productos.html">Ver productos</a>
+          <a class="btn btn-secondary" href="contacto.html">Contáctanos</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDcybj33SZkGGrzO1Q7bjw6apc8UiBEgnPepqKLhG6gMFOVRJmxs_tOXI&s=10" alt="Gato feliz" />
+      </div>
+    </section>
+
+    <section class="features">
+      <article class="feature-card">
+        <h2>Envios rápidos</h2>
+        <p>Recibe tus pedidos en pocos días y con un embalaje seguro para productos delicados.</p>
+      </article>
+      <article class="feature-card">
+        <h2>Productos exclusivos</h2>
+        <p>Accesorios, fotos y artículos únicos que no encontrarás en cualquier tienda.</p>
+      </article>
+      <article class="feature-card">
+        <h2>Atención personalizada</h2>
+        <p>Te ayudamos a elegir el mejor producto según el estilo y el carácter de tu mascota.</p>
+      </article>
+    </section>
+
+    <section class="info-section">
+      <div class="info-text">
+        <h2>Lo que hace especial a nuestra tienda</h2>
+        <p>Nos apasionan los gatos y buscamos ofrecer productos que combinen estilo, calidad y ternura. Cada artículo está pensado para alegrar el día de tu mascota y de tu hogar.</p>
+      </div>
+      <div class="info-cards">
+        <div class="info-card">
+          <h3>Fotos artísticas</h3>
+          <p>Obras visuales con gatos en poses divertidas y emotivas.</p>
+        </div>
+        <div class="info-card">
+          <h3>Accesorios prácticos</h3>
+          <p>Collares, juguetes y complementos creados para el bienestar felino.</p>
+        </div>
+        <div class="info-card">
+          <h3>Regalos ideales</h3>
+          <p>Encuentra el detalle perfecto para los amantes de los gatos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h2>¿Qué dicen nuestros clientes?</h2>
+      <div class="testimonial-cards">
+        <div class="testimonial-card">
+          <p>"Los productos llegaron muy rápido y mi gato los amó. El servicio fue excelente."</p>
+          <span>- Laura M.</span>
+        </div>
+        <div class="testimonial-card">
+          <p>"Me encantó la decoración para mi sala. Todo bien presentado y listo para regalar."</p>
+          <span>- Andrés T.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Tienda Gato. Todos los derechos reservados.</p>
+  </footer>
 </body>
 </html>
